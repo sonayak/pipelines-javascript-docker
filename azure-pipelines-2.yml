@@ -12,6 +12,9 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
+- task: DockerInstaller@0
+  inputs:
+    dockerVersion: '17.09.0-ce'
 - task: KubectlInstaller@0
   inputs:
     kubectlVersion: 'latest'

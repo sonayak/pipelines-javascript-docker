@@ -28,12 +28,10 @@ stages:
     pool:
       vmImage: $(vmImageName)
     steps:
-    - task: Docker@2
+    - task: Docker@1
       displayName: Build and push an image to container registry
       inputs:
-        command: buildAndPush
-        repository: $(imageRepository)
-        dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
-        tags: |
-          $(tag)
+        command: Build an image
+        azureContainerRegistry: $(dockerRegistryServiceConnection)
+        dockerRegistryEndpoint: $(imageRepository)
+        dockerFile: $(dockerfilePath)

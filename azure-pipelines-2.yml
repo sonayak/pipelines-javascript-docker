@@ -27,5 +27,5 @@ steps:
   inputs:
     containerRegistry: 'sonayak-1418'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: './Dockerfile'
 

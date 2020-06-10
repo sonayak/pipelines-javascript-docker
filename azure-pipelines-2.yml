@@ -12,20 +12,20 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- task: DockerInstaller@0
-  inputs:
-    dockerVersion: '17.09.0-ce'
-- task: KubectlInstaller@0
-  inputs:
-    kubectlVersion: 'latest'
+#- task: DockerInstaller@0
+#  inputs:
+#    dockerVersion: '17.09.0-ce'
+#- task: KubectlInstaller@0
+#  inputs:
+#    kubectlVersion: 'latest'
 
-- task: HelmInstaller@1
-  inputs:
-    helmVersionToInstall: 'latest'
+#- task: HelmInstaller@1
+#  inputs:
+#    helmVersionToInstall: 'latest'
 
 - task: Docker@2
   inputs:
     containerRegistry: 'sonayak-1418'
     command: 'buildAndPush'
-    Dockerfile: './Dockerfile'
+    Dockerfile: './app/Dockerfile'
 

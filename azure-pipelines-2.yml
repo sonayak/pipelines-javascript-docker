@@ -31,4 +31,5 @@ steps:
   inputs:
     command: 'build'
     Dockerfile: '**/Dockerfile'
+    addPipelineData: false
 
